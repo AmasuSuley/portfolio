@@ -51,7 +51,7 @@ The platform features a multi-step workflow:
 
 
 FarmLink is built with security in mind, ensuring that sensitive farm data and transaction details are protected. The responsive design ensures accessibility across devices, particularly important for farmers in remote areas who may primarily use mobile devices.`,
-  image: '/images/farm.png',
+  image: './images/farm.png',
   tags: ['React',  'JWT Auth', 'Laravel', 'Tailwind CSS'],
   category: 'web',
   features: [
