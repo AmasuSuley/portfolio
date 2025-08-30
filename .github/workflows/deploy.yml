@@ -33,7 +33,7 @@ jobs:
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./dist
-          # Enable if you want to keep the deployment history
+          
           enable_jekyll: false
-          # Allow empty commits if only the build hash changes
+          
           allow_empty_commit: true
