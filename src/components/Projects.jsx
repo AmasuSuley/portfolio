@@ -103,7 +103,7 @@ FarmLink is built with security in mind, ensuring that sensitive farm data and t
       category: 'web',
       link: '#',
       features: ['Responsive design', 'Dark mode', 'Smooth animations', 'Project filtering', 'Contact form'],
-      github: 'https://github.com/yourusername/portfolio',
+      github: 'https://github.com/AmasuSuley/portfolio.git',
       liveDemo: 'https://your-portfolio-demo.com'
     },
    
