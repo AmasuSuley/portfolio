@@ -67,19 +67,19 @@ FarmLink is built with security in mind, ensuring that sensitive farm data and t
   youtubeId: '',
    youtubeUrl: 'https://youtu.be/5i-p7ewM7QQ',
 },
-    {
-      id: 3,
-      title: 'Social media platform',
-      description: 'Soical media platform for personal post and discussion room .',
-      fullDescription: 'This platform allow user to post something then people comment,like and reply ,also user can create room for discussion .',
-      image: './images/social.png',
-      tags: ['Django', 'Tailwindcss', 'SQlite'],
-      category: 'web',
-      link: '#',
-      features: ['Post section', 'Room creation', 'update infromation and profile picture'],
-      github: 'https://github.com/AmasuSuley/kukuApp.git',
-      liveDemo: 'https://your-weather-demo.com'
-    },
+    // {
+    //   id: 3,
+    //   title: 'Social media platform',
+    //   description: 'Soical media platform for personal post and discussion room .',
+    //   fullDescription: 'This platform allow user to post something then people comment,like and reply ,also user can create room for discussion .',
+    //   image: './images/social.png',
+    //   tags: ['Django', 'Tailwindcss', 'SQlite'],
+    //   category: 'web',
+    //   link: '#',
+    //   features: ['Post section', 'Room creation', 'update infromation and profile picture'],
+    //   github: 'https://github.com/AmasuSuley/kukuApp.git',
+    //   liveDemo: 'https://your-weather-demo.com'
+    // },
     {
       id: 4,
       title: 'Nuur-din website',
