@@ -1,0 +1,33 @@
+export const skills = [
+  { name: 'Java / Spring Boot', category: 'Backend' },
+  { name: 'React', category: 'Frontend' },
+  { name: 'JavaScript', category: 'Frontend' },
+  { name: 'HTML / CSS', category: 'Frontend' },
+  { name: 'Tailwind CSS', category: 'Frontend' },
+  { name: 'Python / Django', category: 'Backend' },
+  { name: 'PHP / Laravel', category: 'Backend' },
+  { name: 'Node.js', category: 'Backend' },
+  { name: 'Flutter', category: 'Mobile' },
+  { name: 'TensorFlow Lite', category: 'Mobile' },
+  { name: 'REST APIs', category: 'Backend' },
+  { name: 'PostgreSQL / SQL', category: 'Tools' },
+  { name: 'Git & GitHub', category: 'Tools' },
+  { name: 'Docker', category: 'Tools' },
+  { name: 'UI / UX Design', category: 'Design' },
+  { name: 'Figma', category: 'Design' },
+]
+
+export const techMarquee = [
+  'Spring Boot',
+  'React',
+  'Java',
+  'Laravel',
+  'Django',
+  'Tailwind CSS',
+  'Flutter',
+  'TensorFlow',
+  'PostgreSQL',
+  'Docker',
+  'REST APIs',
+  'Vite',
+]

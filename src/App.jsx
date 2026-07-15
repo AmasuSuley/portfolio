@@ -1,42 +1,45 @@
-import { useState, useEffect } from 'react'
-import Header from './components/Header'
-import Hero from './components/Hero'
-import About from './components/About'
-import Skills from './components/Skills'
-import Projects from './components/Projects'
-import Contact from './components/Contact'
-import Footer from './components/Footer'
+import { useDarkMode } from './hooks/useDarkMode'
+import { PageViewsProvider } from './hooks/usePageViews'
+import Header from './components/layout/Header'
+import Footer from './components/layout/Footer'
+import Hero from './components/sections/Hero'
+import About from './components/sections/About'
+import Experience from './components/sections/Experience'
+import Skills from './components/sections/Skills'
+import Projects from './components/sections/Projects'
+import Testimonials from './components/sections/Testimonials'
+import Contact from './components/sections/Contact'
+import TechMarquee from './components/ui/TechMarquee'
+import CustomCursor from './components/ui/CustomCursor'
+import ScrollProgress from './components/motion/ScrollProgress'
+import IntroOverlay from './components/motion/IntroOverlay'
+import FloatingContactBar from './components/ui/FloatingContactBar'
 
 function App() {
-  const [darkMode, setDarkMode] = useState(() => {
-    const savedMode = localStorage.getItem('darkMode')
-    return savedMode ? JSON.parse(savedMode) : false
-  })
-
-  // dark mode form local sorage
-  useEffect(() => {
-    localStorage.setItem('darkMode', JSON.stringify(darkMode))
-    
-  
-    if (darkMode) {
-      document.documentElement.classList.add('dark')
-    } else {
-      document.documentElement.classList.remove('dark')
-    }
-  }, [darkMode])
+  const [darkMode, setDarkMode] = useDarkMode()
 
   return (
-    <div className={darkMode ? "dark" : ""}>
-      <div className="bg-white dark:bg-gray-900 text-gray-900 dark:text-white min-h-screen font-sans transition-colors duration-300">
+    <PageViewsProvider>
+      <div className="relative min-h-screen overflow-x-hidden bg-bg text-ink transition-colors duration-500">
+        <div className="pointer-events-none fixed inset-0 grain" aria-hidden="true" />
+        <IntroOverlay />
+        <CustomCursor />
+        <ScrollProgress />
         <Header darkMode={darkMode} setDarkMode={setDarkMode} />
-        <Hero />
-        <About />
-        <Skills />
-        <Projects />
-        <Contact />
+        <main className="pb-20 md:pb-0">
+          <Hero />
+          <TechMarquee />
+          <About />
+          <Experience />
+          <Skills />
+          <Projects />
+          <Testimonials />
+          <Contact />
+        </main>
         <Footer />
+        <FloatingContactBar />
       </div>
-    </div>
+    </PageViewsProvider>
   )
 }
 
