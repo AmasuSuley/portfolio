@@ -49,8 +49,8 @@ export default function Hero() {
   const mouseY = useMotionValue(0)
   const springX = useSpring(mouseX, { stiffness: 60, damping: 20 })
   const springY = useSpring(mouseY, { stiffness: 60, damping: 20 })
-  const moveX = useTransform(springX, [-0.5, 0.5], reduceMotion ? [0, 0] : [-32, 32])
-  const moveY = useTransform(springY, [-0.5, 0.5], reduceMotion ? [0, 0] : [-20, 20])
+  const moveX = useTransform(springX, [-0.5, 0.5], reduceMotion ? [0, 0] : [-12, 12])
+  const moveY = useTransform(springY, [-0.5, 0.5], reduceMotion ? [0, 0] : [-8, 8])
 
   useEffect(() => {
     const id = setInterval(() => {
@@ -79,24 +79,28 @@ export default function Hero() {
   }
 
   return (
-    <section id="home" className="relative min-h-[100svh] overflow-hidden">
-      <motion.div className="absolute inset-0 overflow-hidden" style={{ y: scrollYOffset }}>
-        <motion.div className="absolute inset-[-10%]" style={{ x: moveX, y: moveY }}>
+    <section id="home" className="relative min-h-[100svh] overflow-hidden bg-[#0a0a0c]">
+      <motion.div className="absolute inset-0" style={{ y: scrollYOffset }}>
+        {/* Full uncropped photo — contain keeps the entire image visible */}
+        <motion.div
+          className="absolute inset-0 flex items-center justify-center"
+          style={reduceMotion ? undefined : { x: moveX, y: moveY }}
+        >
           <img
             src={site.profileImage}
             alt={site.name}
             decoding="async"
             fetchPriority="high"
-            className={`h-full w-full object-cover object-center will-change-transform ${
-              reduceMotion ? '' : 'hero-kenburns'
-            }`}
+            className="max-h-full max-w-full object-contain object-center"
           />
         </motion.div>
-        <div className="absolute inset-0 bg-gradient-to-r from-[#0a0a0c]/93 via-[#0a0a0c]/74 to-[#0a0a0c]/38" />
-        <div className="absolute inset-0 bg-gradient-to-t from-bg via-transparent to-[#0a0a0c]/30" />
+
+        {/* Soft cinematic overlays — keep face readable, no hard crop */}
+        <div className="absolute inset-0 bg-gradient-to-r from-[#0a0a0c]/88 via-[#0a0a0c]/45 to-[#0a0a0c]/25" />
+        <div className="absolute inset-0 bg-gradient-to-t from-bg via-transparent to-[#0a0a0c]/40" />
         <div
-          className={`absolute inset-0 gold-shimmer mix-blend-soft-light bg-[radial-gradient(circle_at_70%_36%,rgba(212,160,23,0.42),transparent_48%)] ${
-            reduceMotion ? 'opacity-40' : 'hero-ambient'
+          className={`absolute inset-0 gold-shimmer mix-blend-soft-light bg-[radial-gradient(circle_at_70%_36%,rgba(212,160,23,0.28),transparent_48%)] ${
+            reduceMotion ? 'opacity-30' : 'hero-ambient'
           }`}
         />
         {!reduceMotion && (
@@ -145,7 +149,7 @@ export default function Hero() {
             {site.role}
           </motion.p>
 
-          <h1 className="font-display text-5xl font-extrabold leading-[0.92] tracking-tight md:text-7xl lg:text-8xl">
+          <h1 className="font-display whitespace-nowrap text-3xl font-extrabold leading-none tracking-tight sm:text-4xl md:text-5xl lg:text-6xl">
             <SplitName name={site.name} reduceMotion={reduceMotion} />
           </h1>
 
